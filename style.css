@@ -1,0 +1,58 @@
+/*
+ * Fit for Fun Fitness Club Custom Stylesheet
+ * Defines styles for the responsive navigation and other page elements.
+ */
+
+/* ----------------------------------- */
+/* 1. FLEXBOX NAVIGATION STYLING       */
+/* ----------------------------------- */
+
+/* The <nav> element acts as the Flex Container (Parent) */
+nav {
+    display: flex; /* Enables Flexbox layout */
+    background-color: #3f51b5; /* Custom color for visibility */
+    padding: 10px;
+}
+
+/* MOBILE-FIRST LAYOUT (Default: Vertical Stack) */
+nav {
+    flex-direction: column; /* Stacks links vertically on small screens */
+    align-items: center;    /* Centers the links horizontally within the nav */
+    gap: 10px; /* Vertical spacing between stacked links */
+}
+
+/* Styling for the Child Links (<a> tags) */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    /* Allows links to take full width in the vertical stack */
+    width: 100%; 
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #5c6bc0;
+}
+
+/* ----------------------------------- */
+/* 2. MEDIA QUERY: DESKTOP LAYOUT      */
+/* ----------------------------------- */
+
+/* Applies styles only when the screen width is 768px or wider */
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row; /* Switches links to horizontal row layout */
+        align-items: center; /* Centers items vertically within the nav bar */
+        /* Distributes available space between and around the two links */
+        justify-content: space-around; 
+        gap: 0; /* Removes vertical gap */
+    }
+
+    nav a {
+        width: auto; /* Allows links to size based on content width */
+    }
+}
